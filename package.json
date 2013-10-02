@@ -1,0 +1,33 @@
+{
+  "name": "assemble-sitemap",
+  "version": "0.0.1",
+  "description": "Sitemap generator plugin for Assemble",
+  "homepage": "http://assemble.io/plugins",
+  "author": {
+    "name": "Hariadi Hinta",
+    "url": "https://github.com/hariadi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hariadi/assemble-sitemap.git"
+  },
+  "bugs": {
+    "url": "git://github.com/hariadi/assemble-sitemap/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/assemble/assemble/blob/master/LICENSE-MIT"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "jstoxml": "*"
+  },
+  "keywords": [
+    "blog generator",
+    "blog",
+    "assemble",
+    "plugins"
+    ]
+}
