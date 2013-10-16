@@ -53,7 +53,8 @@ module.exports = function(grunt) {
           sitemap: {
             homepage: 'http://assemble.io',
             changefreq: 'daily',
-            priority: '0.8'
+            priority: '0.8',
+            exclude: ['50x', 'admin']
           }
         },
         files: [

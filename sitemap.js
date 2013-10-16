@@ -30,7 +30,7 @@ module.exports = function (params, callback) {
   pages.forEach(function(page) {
 
     if(!_.isUndefined(sitemaps.exclude)) {
-      exclusion = exclusion.concat(sitemaps.exclude);
+      exclusion = _.union([], exclusion, sitemaps.exclude || []);
     }
 
     var url = sitemaps.homepage;
