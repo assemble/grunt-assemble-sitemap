@@ -1,8 +1,8 @@
 /*
- * Assemble Plugin: Permalinks
- * https://github.com/assemble/permalinks
+ * Assemble Plugin: Sitemap
+ * https://github.com/hariadi/assemble-sitemap
  *
- * Copyright (c) 2013 Jon Schlinkert, contributors
+ * Copyright (c) 2013 Hariadi Hinta, contributors
  * Licensed under the MIT license.
  */
 
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
           sitemap: {
             homepage: 'http://assemble.io',
             changefreq: 'daily',
-            priority: '0.5'
+            priority: '0.8'
           }
         },
         files: [
