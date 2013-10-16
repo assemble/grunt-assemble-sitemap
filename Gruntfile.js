@@ -38,7 +38,6 @@ module.exports = function(grunt) {
       options: {
         plugins: ['./sitemap.js']
       },
-      // Should modify dest path using preset "pretty"
       sitemap: {
         files: [
           {
