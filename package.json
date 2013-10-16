@@ -1,6 +1,6 @@
 {
   "name": "assemble-sitemap",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Sitemap generator plugin for Assemble",
   "homepage": "http://assemble.io/plugins",
   "author": {
@@ -16,7 +16,7 @@
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/assemble/assemble/blob/master/LICENSE-MIT"
+    "url": "https://github.com/hariadi/assemble-sitemap/blob/master/LICENSE-MIT"
   },
   "main": "sitemap.js",
   "engines": {
@@ -36,8 +36,8 @@
     "assemble": "~0.4.12"
   },
   "keywords": [
-    "blog generator",
-    "blog",
+    "sitemap generator",
+    "sitemap",
     "assemble",
     "plugins"
     ]
