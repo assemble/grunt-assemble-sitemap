@@ -37,7 +37,7 @@ If everything was installed and configured correctly, you should be ready to go!
 
 
 ## Options
-See [sitemaps.org]( )http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for detail XML tag definitions.
+See [sitemaps.org](http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for detail XML tag definitions.
 
 ### homepage
 Type: `String`  
@@ -143,7 +143,7 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
- * 2013-10-01   v0.1.0   First commmit. Exclusion
+ * 2013-10-01   v0.1.0   First commmit. Add option to exclude
 
 ## License
 Copyright (c) 2013 Hariadi Hinta, contributors.
@@ -151,4 +151,4 @@ Released under the MIT license
 
 ***
 
-_This file was generated on Wednesday, October 16, 2013._
+_This file was generated on Thursday, October 17, 2013._

@@ -1,4 +1,4 @@
-See [sitemaps.org]( )http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for detail XML tag definitions.
+See [sitemaps.org](http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for detail XML tag definitions.
 
 ## homepage
 Type: `String`  

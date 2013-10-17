@@ -19,11 +19,13 @@ module.exports = function (params, callback) {
   var page = context.page;
   var sitemaps = context.sitemap;
   var sitemap = [];
+  var robots = [];
   var exclusion = ['404'];
 
   if(_.isUndefined(sitemaps)) {
     sitemaps = {
-      homepage: grunt.config.get('pkg.homepage')
+      homepage: grunt.config.get('pkg.homepage'),
+      robot: true
     }; 
   }
 
@@ -38,7 +40,8 @@ module.exports = function (params, callback) {
     var changefreq = sitemaps.changefreq || 'weekly';
     var priority = (sitemaps.priority || 0.5).toString();
     
-    if(exclusion.indexOf(page.basename) === 0) {
+    if(exclusion.indexOf(page.basename) !== -1) {
+      robots.push('Disallow: /' + page.dest);
       return;
     }
 
@@ -50,6 +53,7 @@ module.exports = function (params, callback) {
         priority: priority
       }
     });
+
   });
 
   var result = xml.toXML({
@@ -62,6 +66,19 @@ module.exports = function (params, callback) {
 
   grunt.file.write(page.dirname + '/sitemap.xml', result);
   grunt.verbose.writeln('>> Sitemap:'.yellow, page.dirname + '/sitemap.xml');
+
+
+  if(_.isUndefined(sitemaps.robot)) { sitemaps.robot = true; }
+
+  if (sitemaps.robot) {
+    var robot = "User-agent: *\n\n";
+
+    _.forEach(robots, function(item) {
+      robot += item + '\n';
+    });
+
+    grunt.file.write(page.dirname + '/robots.txt', robot);
+  }
 
   callback();
 };

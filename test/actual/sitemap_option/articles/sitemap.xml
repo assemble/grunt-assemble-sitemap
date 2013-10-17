@@ -13,12 +13,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://assemble.io/test/actual/sitemap_option/foo.html</loc>
-    <lastmod>2013-10-03T00:00:00.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://assemble.io/test/actual/sitemap_option/index.html</loc>
     <lastmod>2013-10-01T00:00:00.000Z</lastmod>
     <changefreq>daily</changefreq>

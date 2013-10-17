@@ -54,7 +54,8 @@ module.exports = function(grunt) {
             homepage: 'http://assemble.io',
             changefreq: 'daily',
             priority: '0.8',
-            exclude: ['50x', 'admin']
+            exclude: ['50x', 'foo'],
+            robot: false
           }
         },
         files: [
