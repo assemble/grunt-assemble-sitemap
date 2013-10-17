@@ -1,4 +1,4 @@
-# assemble-sitemap [![NPM version](https://badge.fury.io/js/assemble-sitemap.png)](http://badge.fury.io/js/assemble-sitemap) 
+# assemble-contrib-sitemap [![NPM version](https://badge.fury.io/js/assemble-contrib-sitemap.png)](http://badge.fury.io/js/assemble-contrib-sitemap) 
 
 > Sitemap generator plugin for Assemble
 
@@ -7,7 +7,7 @@
 From the same directory as your project's [Gruntfile][Getting Started] and [package.json][], install this plugin with the following command:
 
 ```bash
-npm install assemble-sitemap --save
+npm install assemble-contrib-sitemap --save
 ```
 
 Once that's done, just add `sitemap`, the name of this module, to the `plugins` option in the Assemble task:
@@ -108,6 +108,13 @@ assemble: {
 
 ```
 
+### Result
+
+```js
+./blog/sitemap.xml
+./blog/robots.txt
+```
+
 ### Advanced
 
 ```js
@@ -117,8 +124,10 @@ assemble: {
       plugins: ['sitemap'],
       sitemap: {
         homepage: 'http://assemble.io',
-        changefreq: 'daily',
-        priority: '0.8'
+            changefreq: 'daily',
+            priority: '0.8',
+            exclude: ['50x', 'foo'],
+            robot: false
       }
     },
     files: {
@@ -137,7 +146,7 @@ assemble: {
 
 
 ## Contributing
-We welcome all kinds of contributions! The most basic way to show your support is to star the project, and if you'd like to get involed please see the [Contributing to assemble-sitemap](http://assemble.io/contributing/) guide for information on contributing to this project.
+We welcome all kinds of contributions! The most basic way to show your support is to star the project, and if you'd like to get involed please see the [Contributing to assemble-contrib-sitemap](http://assemble.io/contributing/) guide for information on contributing to this project.
 
 ## Author
 
@@ -148,6 +157,7 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
+ * 2013-10-17   v0.1.1   Add option to generate robots.txt Change name to assemble-contrib.sitemap Move to Assemble main repo
  * 2013-10-01   v0.1.0   First commmit. Add option to exclude
 
 ## License

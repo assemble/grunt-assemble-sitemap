@@ -1,6 +1,6 @@
 /*
  * Assemble Plugin: Sitemap
- * https://github.com/hariadi/assemble-sitemap
+ * https://github.com/assemble/assemble-contrib-sitemap
  *
  * Sitemap generator plugin for Assemble.
  *
