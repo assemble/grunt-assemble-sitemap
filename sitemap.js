@@ -17,17 +17,14 @@ module.exports = function (params, callback) {
   var context = params.context;
   var pages = context.pages; 
   var page = context.page;
-  var sitemaps = context.sitemap;
+  var sitemaps = context.sitemap || {};
   var sitemap = [];
   var robots = [];
   var exclusion = ['404'];
+  var pkg = grunt.file.readJSON('package.json');
 
-  if(_.isUndefined(sitemaps)) {
-    sitemaps = {
-      homepage: grunt.config.get('pkg.homepage'),
-      robot: true
-    }; 
-  }
+  sitemaps.homepage = sitemaps.homepage || pkg.homepage;
+  sitemaps.robot = sitemaps.robot || true;
 
   pages.forEach(function(page) {
 

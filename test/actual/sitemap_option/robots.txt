@@ -1,0 +1,4 @@
+User-agent: *
+
+Disallow: /test/actual/sitemap_option/404.html
+Disallow: /test/actual/sitemap_option/foo.html
