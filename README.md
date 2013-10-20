@@ -157,6 +157,7 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
+ * 2013-10-20   v0.1.3   Fix sitemap and robots.txt generated on every folder
  * 2013-10-18   v0.1.2   Fix homepage
  * 2013-10-17   v0.1.1   Add option to generate robots.txt Change name to assemble-contrib.sitemap Move to Assemble main repo
  * 2013-10-01   v0.1.0   First commmit. Add option to exclude
