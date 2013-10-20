@@ -34,7 +34,7 @@ Page to omit from the sitemap.
 
 ```js
 options: {
-  permalinks: {
+  sitemap: {
     exclusions: ["foo", "bar"],
   },
   files: {
