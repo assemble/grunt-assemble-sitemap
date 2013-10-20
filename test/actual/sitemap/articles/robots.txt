@@ -1,3 +1,0 @@
-User-agent: *
-
-Disallow: /test/actual/sitemap/404.html

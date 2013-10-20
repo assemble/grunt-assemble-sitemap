@@ -73,7 +73,7 @@ Page to omit from the sitemap.
 
 ```js
 options: {
-  permalinks: {
+  sitemap: {
     exclusions: ["foo", "bar"],
   },
   files: {
@@ -167,4 +167,4 @@ Released under the MIT license
 
 ***
 
-_This file was generated on Friday, October 18, 2013._
+_This file was generated on Sunday, October 20, 2013._
