@@ -19,6 +19,9 @@
     "url": "https://github.com/assemble/assemble-contrib-sitemap/blob/master/LICENSE-MIT"
   },
   "main": "sitemap.js",
+  "scripts": {
+    "test": "grunt"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },

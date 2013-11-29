@@ -1,4 +1,4 @@
-# assemble-contrib-sitemap [![NPM version](https://badge.fury.io/js/assemble-contrib-sitemap.png)](http://badge.fury.io/js/assemble-contrib-sitemap) 
+# assemble-contrib-sitemap [![NPM version](https://badge.fury.io/js/assemble-contrib-sitemap.png)](http://badge.fury.io/js/assemble-contrib-sitemap)  [![Build Status](https://travis-ci.org/assemble/assemble-contrib-sitemap.png)](https://travis-ci.org/assemble/assemble-contrib-sitemap)
 
 > Sitemap generator plugin for Assemble
 
