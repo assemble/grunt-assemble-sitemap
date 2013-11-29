@@ -5,6 +5,9 @@ username: hariadi
 
 > {%= description %}
 
+## Table of Contents
+{%= toc %}
+
 ## Quickstart
 {%= _.doc("quickstart.md") %}
 

@@ -9,6 +9,7 @@
  */
 
 var xml =  require('jstoxml');
+var async = require('async');
 
 module.exports = function (params, callback) {
   
@@ -22,7 +23,6 @@ module.exports = function (params, callback) {
   var robots = [];
   var exclusion = ['404'];
   var pkg = grunt.file.readJSON('package.json');
-  var async = grunt.util.async;
 
   sitemaps.homepage = sitemaps.homepage || pkg.homepage;
   sitemaps.robot = sitemaps.robot || true;
