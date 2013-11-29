@@ -1,6 +1,6 @@
 {
   "name": "assemble-contrib-sitemap",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Sitemap generator plugin for Assemble",
   "homepage": "http://assemble.io/plugins",
   "author": {
@@ -19,6 +19,9 @@
     "url": "https://github.com/assemble/assemble-contrib-sitemap/blob/master/LICENSE-MIT"
   },
   "main": "sitemap.js",
+  "scripts": {
+    "test": "grunt"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },
@@ -27,6 +30,7 @@
     "async": "~0.2.9"
   },
   "devDependencies": {
+    "assemble": "~0.4.29",
     "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-jshint": "~0.7.2",
