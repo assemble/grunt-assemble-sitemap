@@ -2,6 +2,18 @@
 
 > Sitemap generator plugin for Assemble
 
+## Table of Contents
+* [assemble-contrib-sitemap](#name)
+  * [Table of Contents](#table-of-contents)
+  * [Quickstart](#quickstart)
+  * [Options](#options)
+  * [Usage Examples](#usage-examples)
+  * [Contributing](#contributing)
+  * [Author](#author)
+  * [Release History](#release-history)
+  * [License](#license)
+
+
 ## Quickstart
 
 From the same directory as your project's [Gruntfile][Getting Started] and [package.json][], install this plugin with the following command:
