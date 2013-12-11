@@ -31,7 +31,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     assemble: {
       options: {
-        plugins: ['sitemap']
+        plugins: ['assemble-contrib-sitemap']
       },
       ...
     }
@@ -110,7 +110,7 @@ To simplify might do something like:
 assemble: {
   blog: {
     options: {
-      plugins: ['sitemap'],
+      plugins: ['assemble-contrib-sitemap'],
     },
     files: {
       './blog/': ['./templates/blog/*.hbs']
@@ -133,7 +133,7 @@ assemble: {
 assemble: {
   blog: {
     options: {
-      plugins: ['sitemap'],
+      plugins: ['assemble-contrib-sitemap'],
       sitemap: {
         homepage: 'http://assemble.io',
             changefreq: 'daily',
