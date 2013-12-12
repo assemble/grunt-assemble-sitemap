@@ -3,15 +3,13 @@
 > Sitemap generator plugin for Assemble
 
 ## Table of Contents
-* [assemble-contrib-sitemap](#name)
-  * [Table of Contents](#table-of-contents)
-  * [Quickstart](#quickstart)
-  * [Options](#options)
-  * [Usage Examples](#usage-examples)
-  * [Contributing](#contributing)
-  * [Author](#author)
-  * [Release History](#release-history)
-  * [License](#license)
+* [Quickstart](#quickstart)
+* [Options](#options)
+* [Usage Examples](#usage-examples)
+* [Contributing](#contributing)
+* [Author](#author)
+* [Release History](#release-history)
+* [License](#license)
 
 
 ## Quickstart
@@ -22,7 +20,7 @@ From the same directory as your project's [Gruntfile][Getting Started] and [pack
 npm install assemble-contrib-sitemap --save
 ```
 
-Once that's done, just add `sitemap`, the name of this module, to the `plugins` option in the Assemble task:
+Once that's done, just add `assemble-contrib-sitemap`, the name of this module, to the `plugins` option in the Assemble task:
 
 ```js
 module.exports = function(grunt) {
@@ -31,7 +29,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     assemble: {
       options: {
-        plugins: ['sitemap']
+        plugins: ['assemble-contrib-sitemap']
       },
       ...
     }
@@ -110,7 +108,7 @@ To simplify might do something like:
 assemble: {
   blog: {
     options: {
-      plugins: ['sitemap'],
+      plugins: ['assemble-contrib-sitemap'],
     },
     files: {
       './blog/': ['./templates/blog/*.hbs']
@@ -133,7 +131,7 @@ assemble: {
 assemble: {
   blog: {
     options: {
-      plugins: ['sitemap'],
+      plugins: ['assemble-contrib-sitemap'],
       sitemap: {
         homepage: 'http://assemble.io',
             changefreq: 'daily',
@@ -169,7 +167,10 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
- * 2013-10-20   v0.1.3   Fix sitemap and robots.txt generated on every folder
+ * 2013-12-12   v0.1.6   Fix plugin name in Usage Examples Update deps
+ * 2013-11-29   v0.1.5   Travis CI test
+ * 2013-11-29   v0.1.4   Updates dependencies to work with Grunt 0.4.2 [object Object] Add TOC to docs
+ * 2013-10-20   v0.1.3   Fix sitemap and robots.txt generated on every folder Update docs options:exclusions
  * 2013-10-18   v0.1.2   Fix homepage
  * 2013-10-17   v0.1.1   Add option to generate robots.txt Change name to assemble-contrib.sitemap Move to Assemble main repo
  * 2013-10-01   v0.1.0   First commmit. Add option to exclude
@@ -180,4 +181,4 @@ Released under the MIT license
 
 ***
 
-_This file was generated on Friday, November 29, 2013._
+_This file was generated on Thursday, December 12, 2013._
