@@ -5,7 +5,7 @@ From the same directory as your project's [Gruntfile][Getting Started] and [pack
 npm install {%= name %} --save
 ```
 
-Once that's done, just add `sitemap`, the name of this module, to the `plugins` option in the Assemble task:
+Once that's done, just add `{%= name %}`, the name of this module, to the `plugins` option in the Assemble task:
 
 ```js
 module.exports = function(grunt) {
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     assemble: {
       options: {
-        plugins: ['sitemap']
+        plugins: ['{%= name %}']
       },
       ...
     }

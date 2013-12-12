@@ -6,7 +6,7 @@ To simplify might do something like:
 assemble: {
   blog: {
     options: {
-      plugins: ['sitemap'],
+      plugins: ['{%= name %}'],
     },
     files: {
       './blog/': ['./templates/blog/*.hbs']
@@ -29,7 +29,7 @@ assemble: {
 assemble: {
   blog: {
     options: {
-      plugins: ['sitemap'],
+      plugins: ['{%= name %}'],
       sitemap: {
         homepage: 'http://assemble.io',
             changefreq: 'daily',
