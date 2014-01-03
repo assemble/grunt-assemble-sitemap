@@ -28,6 +28,8 @@ module.exports = function (params, callback) {
   sitemaps.robot = sitemaps.robot || true;
   sitemaps.changefreq = sitemaps.changefreq || 'weekly';
   sitemaps.priority = (sitemaps.priority || 0.5).toString();
+  sitemaps.relativedest = sitemaps.relativedest || false;
+
 
   // Only write if it actually changed.
   var write = function(file, content) {
@@ -53,6 +55,7 @@ module.exports = function (params, callback) {
     var date = file.data.updated || file.data.date || new Date();
     var changefreq = sitemaps.changefreq;
     var priority = sitemaps.priority;
+    var relativedest = sitemaps.relativedest;
     
     if(exclusion.indexOf(file.basename) !== -1) {
       robots.push('Disallow: /' + file.dest);
@@ -61,7 +64,7 @@ module.exports = function (params, callback) {
 
     sitemap.push({
       url: {
-        loc: url + '/' + file.dest,
+        loc: url + '/' + (relativedest ? file.dest.replace(file.filePair.orig.dest+"/","") : file.dest ),
         lastmod: date.toISOString(),
         changefreq: changefreq,
         priority: priority
