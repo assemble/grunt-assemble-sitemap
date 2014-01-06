@@ -2,7 +2,7 @@
  * Assemble Plugin: Sitemap
  * https://github.com/hariadi/assemble-sitemap
  *
- * Copyright (c) 2013 Hariadi Hinta, contributors
+ * Copyright (c) 2014 Hariadi Hinta, contributors
  * Licensed under the MIT license.
  */
 

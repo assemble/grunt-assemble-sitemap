@@ -4,7 +4,7 @@
  *
  * Sitemap generator plugin for Assemble.
  *
- * Copyright (c) 2013 Hariadi Hinta, contributors.
+ * Copyright (c) 2014 Hariadi Hinta, contributors.
  * Licensed under the MIT license.
  */
 

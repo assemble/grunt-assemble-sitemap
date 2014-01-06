@@ -176,9 +176,9 @@ We welcome all kinds of contributions! The most basic way to show your support i
  * 2013-10-01   v0.1.0   First commmit. Add option to exclude
 
 ## License
-Copyright (c) 2013 Hariadi Hinta, contributors.
-Released under the MIT license
+Copyright (c) 2014 Hariadi Hinta, contributors.
+Released under the  license
 
 ***
 
-_This file was generated on Thursday, December 12, 2013._
+_This file was generated on Monday, January 6, 2014._
