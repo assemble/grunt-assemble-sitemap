@@ -10,11 +10,11 @@
 
 var xml =  require('jstoxml');
 var async = require('async');
+var _ = require('lodash');
 
 module.exports = function (params, callback) {
   
   var grunt = params.grunt;
-  var _ = grunt.util._;
   var context = params.context;
   var pages = context.pages; 
   var page = context.page;

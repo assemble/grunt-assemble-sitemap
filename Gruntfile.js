@@ -10,8 +10,6 @@
 
 module.exports = function(grunt) {
 
-  var _ = grunt.util._;
-
   // Project configuration.
   grunt.initConfig({
 
