@@ -167,6 +167,8 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
+ * 2013-01-28   v0.1.8   b0e94e6 use external library 3756fb5 get pages from assemble object
+ * 2013-01-03   v0.1.7   01c5eda Add relativedest option
  * 2013-12-12   v0.1.6   Fix plugin name in Usage Examples Update deps
  * 2013-11-29   v0.1.5   Travis CI test
  * 2013-11-29   v0.1.4   Updates dependencies to work with Grunt 0.4.2 [object Object] Add TOC to docs
@@ -181,4 +183,4 @@ Released under the  license
 
 ***
 
-_This file was generated on Monday, January 6, 2014._
+_This file was generated on Wednesday, January 29, 2014._

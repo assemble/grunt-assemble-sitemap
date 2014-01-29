@@ -1,3 +1,14 @@
+v0.1.8:
+  date: 2013-01-28
+  changes:
+    - b0e94e6 use external library
+    - 3756fb5 get pages from assemble object
+
+v0.1.7:
+  date: 2013-01-03
+  changes:
+    - 01c5eda Add relativedest option
+
 v0.1.6:
   date: 2013-12-12
   changes:

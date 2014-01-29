@@ -1,6 +1,6 @@
 {
   "name": "assemble-contrib-sitemap",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Sitemap generator plugin for Assemble",
   "homepage": "http://assemble.io/plugins",
   "author": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "jstoxml": "*",
-    "async": "~0.2.9",
+    "async": "~0.2.10",
     "lodash": "~2.4.1"
   },
   "devDependencies": {
