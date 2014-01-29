@@ -12,23 +12,23 @@ var xml =  require('jstoxml');
 var async = require('async');
 var _ = require('lodash');
 
-module.exports = function (params, callback) {
+module.exports  = function (params, callback) {
   
-  var grunt = params.grunt;
-  var context = params.context;
-  var pages = context.pages; 
-  var page = context.page;
-  var sitemaps = context.sitemap || {};
-  var sitemap = [];
-  var robots = [];
+  var assemble  = params.assemble;
+  var grunt     = params.grunt;
+  var pages     = assemble.options.pages;
+  var options   = assemble.options.sitemap || {};
+  var dest      = grunt.task.current.data.files[0].dest;
+  var sitemap   = [];
+  var robots    = [];
   var exclusion = ['404'];
-  var pkg = grunt.file.readJSON('package.json');
+  var pkg       = grunt.file.readJSON('package.json');
 
-  sitemaps.homepage = sitemaps.homepage || pkg.homepage;
-  sitemaps.robot = sitemaps.robot || true;
-  sitemaps.changefreq = sitemaps.changefreq || 'weekly';
-  sitemaps.priority = (sitemaps.priority || 0.5).toString();
-  sitemaps.relativedest = sitemaps.relativedest || false;
+  options.homepage = options.homepage || pkg.homepage;
+  options.robot = options.robot || true;
+  options.changefreq = options.changefreq || 'weekly';
+  options.priority = (options.priority || 0.5).toString();
+  options.relativedest = options.relativedest || false;
 
 
   // Only write if it actually changed.
@@ -47,15 +47,15 @@ module.exports = function (params, callback) {
 
   async.forEach(pages, function (file, next) {
 
-    if(!_.isUndefined(sitemaps.exclude)) {
-      exclusion = _.union([], exclusion, sitemaps.exclude || []);
+    if(!_.isUndefined(options.exclude)) {
+      exclusion = _.union([], exclusion, options.exclude || []);
     }
 
-    var url = sitemaps.homepage;
+    var url = options.homepage;
     var date = file.data.updated || file.data.date || new Date();
-    var changefreq = sitemaps.changefreq;
-    var priority = sitemaps.priority;
-    var relativedest = sitemaps.relativedest;
+    var changefreq = options.changefreq;
+    var priority = options.priority;
+    var relativedest = options.relativedest;
     
     if(exclusion.indexOf(file.basename) !== -1) {
       robots.push('Disallow: /' + file.dest);
@@ -82,12 +82,12 @@ module.exports = function (params, callback) {
     _content: sitemap
   }, {header: true, indent: '  '});
 
-  var dest = page.filePair.orig.dest;
+  
 
   var sitemapDest = dest + '/sitemap.xml';
   write(sitemapDest, result);
 
-  if (sitemaps.robot) {
+  if (options.robot) {
     var robot = "User-agent: *\n\n";
 
     _.forEach(robots, function(item) {
@@ -98,4 +98,8 @@ module.exports = function (params, callback) {
     write(robotpDest, robot);
   }
   
+};
+
+module.exports.options = {
+  stage: 'render:pre:pages'
 };
