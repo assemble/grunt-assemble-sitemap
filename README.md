@@ -167,11 +167,10 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
- * 2013-01-28   v0.1.8   b0e94e6 use external library 3756fb5 get pages from assemble object
- * 2013-01-03   v0.1.7   01c5eda Add relativedest option
+ * 2013-01-28   v0.1.8   Use external library Get pages from assemble object
+ * 2013-01-03   v0.1.7   Add relativedest option
  * 2013-12-12   v0.1.6   Fix plugin name in Usage Examples Update deps
- * 2013-11-29   v0.1.5   Travis CI test
- * 2013-11-29   v0.1.4   Updates dependencies to work with Grunt 0.4.2 [object Object] Add TOC to docs
+ * 2013-11-28   v0.1.4   Updates dependencies to work with Grunt 0.4.2 [object Object] Add TOC to docs
  * 2013-10-20   v0.1.3   Fix sitemap and robots.txt generated on every folder Update docs options:exclusions
  * 2013-10-18   v0.1.2   Fix homepage
  * 2013-10-17   v0.1.1   Add option to generate robots.txt Change name to assemble-contrib.sitemap Move to Assemble main repo
@@ -183,4 +182,4 @@ Released under the  license
 
 ***
 
-_This file was generated on Wednesday, January 29, 2014._
+_This file was generated on Thursday, January 30, 2014._
