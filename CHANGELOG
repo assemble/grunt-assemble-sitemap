@@ -1,19 +1,25 @@
+v0.1.8:
+  date: 2013-01-28
+  changes:
+    - Use external library
+    - Get pages from assemble object
+
+v0.1.7:
+  date: 2013-01-03
+  changes:
+    - Add relativedest option
+
 v0.1.6:
   date: 2013-12-12
   changes:
     - Fix plugin name in Usage Examples
     - Update deps
 
-v0.1.5:
-  date: 2013-11-29
-  changes:
-    - Travis CI test
-
 v0.1.4:
-  date: 2013-11-29
+  date: 2013-11-28
   changes:
     - Updates dependencies to work with Grunt 0.4.2
-    - Use external libraries in tasks: async
+    - Use external libraries in tasks: async.
     - Add TOC to docs
 
 v0.1.3:
