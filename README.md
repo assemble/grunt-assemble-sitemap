@@ -167,6 +167,7 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
+ * 2013-02-02   v0.1.9   Fix sitemap destination
  * 2013-01-28   v0.1.8   Use external library Get pages from assemble object
  * 2013-01-03   v0.1.7   Add relativedest option
  * 2013-12-12   v0.1.6   Fix plugin name in Usage Examples Update deps
@@ -182,4 +183,4 @@ Released under the  license
 
 ***
 
-_This file was generated on Thursday, January 30, 2014._
+_This file was generated on Sunday, February 2, 2014._
