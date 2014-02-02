@@ -11,6 +11,7 @@
 var xml =  require('jstoxml');
 var async = require('async');
 var _ = require('lodash');
+var path = require('path');
 
 module.exports  = function (params, callback) {
   
@@ -18,7 +19,7 @@ module.exports  = function (params, callback) {
   var grunt     = params.grunt;
   var pages     = assemble.options.pages;
   var options   = assemble.options.sitemap || {};
-  var dest      = grunt.task.current.data.files[0].dest || grunt.config.data.config.dist;
+  var dest      = path.dirname(pages[0].dest);
   var sitemap   = [];
   var robots    = [];
   var exclusion = ['404'];
