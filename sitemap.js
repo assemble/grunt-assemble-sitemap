@@ -46,6 +46,11 @@ module.exports  = function (params, callback) {
     return grunt.verbose.ok(msg);
   };
 
+  // Return the relative destination if the option is enabled
+  var getRelativeDest = function(relativedest, file) {
+    return (relativedest ? file.dest.replace(file.filePair.orig.dest + "/", "") : file.dest );
+  };
+
   async.forEach(pages, function (file, next) {
 
     if(!_.isUndefined(options.exclude)) {
@@ -59,13 +64,13 @@ module.exports  = function (params, callback) {
     var relativedest = options.relativedest;
     
     if(exclusion.indexOf(file.basename) !== -1) {
-      robots.push('Disallow: /' + file.dest);
+      robots.push('Disallow: /' + getRelativeDest(relativedest, file));
       return;
     }
 
     sitemap.push({
       url: {
-        loc: url + '/' + (relativedest ? file.dest.replace(file.filePair.orig.dest+"/","") : file.dest ),
+        loc: url + '/' + getRelativeDest(relativedest, file),
         lastmod: date.toISOString(),
         changefreq: changefreq,
         priority: priority
