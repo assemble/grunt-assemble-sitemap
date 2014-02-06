@@ -167,6 +167,7 @@ We welcome all kinds of contributions! The most basic way to show your support i
 
 ## Release History
 
+ * 2013-02-05   v0.2.0   Generation of robots.txt will now respect the relativedest option.
  * 2013-02-02   v0.1.9   Fix sitemap destination
  * 2013-01-28   v0.1.8   Use external library Get pages from assemble object
  * 2013-01-03   v0.1.7   Add relativedest option
@@ -183,4 +184,4 @@ Released under the  license
 
 ***
 
-_This file was generated on Sunday, February 2, 2014._
+_This file was generated on Thursday, February 5, 2014._
