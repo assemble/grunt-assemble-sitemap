@@ -14,7 +14,7 @@ var _ = require('lodash');
 var path = require('path');
 
 module.exports  = function (params, callback) {
-  
+
   var assemble  = params.assemble;
   var grunt     = params.grunt;
   var pages     = assemble.options.pages;
@@ -29,11 +29,10 @@ module.exports  = function (params, callback) {
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
   options.dest = options.dest || path.dirname(pages[0].dest);
-  options.relativedest = options.relativedest || false;
 
 
   // Only write if it actually changed.
-  var write = function(file, content) {
+  var write = function (file, content) {
     var msg;
     var old = grunt.file.exists(file) ? grunt.file.read(file) : '';
 
@@ -47,13 +46,13 @@ module.exports  = function (params, callback) {
   };
 
   // Return the relative destination if the option is enabled
-  var getRelativeDest = function(relativedest, file) {
+  var getExternalFilePath = function (relativedest, file) {
     return (relativedest ? file.dest.replace(options.dest + "/", "") : file.dest );
   };
 
   async.forEach(pages, function (file, next) {
 
-    if(!_.isUndefined(options.exclude)) {
+    if (!_.isUndefined(options.exclude)) {
       exclusion = _.union([], exclusion, options.exclude || []);
     }
 
@@ -63,21 +62,21 @@ module.exports  = function (params, callback) {
     var priority = options.priority;
     var relativedest = options.relativedest;
     
-    if(exclusion.indexOf(file.basename) !== -1) {
-      robots.push('Disallow: /' + getRelativeDest(relativedest, file));
+    if (exclusion.indexOf(file.basename) !== -1) {
+      robots.push('Disallow: /' + getExternalFilePath(relativedest, file));
       return;
     }
 
     sitemap.push({
       url: {
-        loc: url + '/' + getRelativeDest(relativedest, file),
+        loc: url + '/' + getExternalFilePath(relativedest, file),
         lastmod: date.toISOString(),
         changefreq: changefreq,
         priority: priority
       }
     });
 
-  next();
+    next();
   }, callback());
 
   var result = xml.toXML({
@@ -88,7 +87,7 @@ module.exports  = function (params, callback) {
     _content: sitemap
   }, {header: true, indent: '  '});
 
-  
+
 
   var sitemapDest = options.dest + '/sitemap.xml';
   write(sitemapDest, result);
@@ -96,14 +95,12 @@ module.exports  = function (params, callback) {
   if (options.robot) {
     var robot = "User-agent: *\n\n";
 
-    _.forEach(robots, function(item) {
-      robot += item + '\n';
-    });
+    robot += robots.join('\n') + '\n';
 
     var robotpDest = options.dest + '/robots.txt';
     write(robotpDest, robot);
   }
-  
+
 };
 
 module.exports.options = {
