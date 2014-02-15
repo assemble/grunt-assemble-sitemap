@@ -59,7 +59,7 @@ module.exports  = function (params, callback) {
 
     var url = options.homepage;
     var date = file.data.updated || file.data.date || new Date();
-    var changefreq = options.changefreq;
+    var changefreq = file.data.changefreq || options.changefreq;
     var priority = options.priority;
     var relativedest = options.relativedest;
     

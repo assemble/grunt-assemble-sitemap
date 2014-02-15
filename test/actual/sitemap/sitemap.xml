@@ -21,7 +21,7 @@
   <url>
     <loc>http://assemble.io/plugins/test/actual/sitemap/index.html</loc>
     <lastmod>2013-10-01T00:00:00.000Z</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>hourly</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>
