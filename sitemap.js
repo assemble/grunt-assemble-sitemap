@@ -26,7 +26,7 @@ module.exports  = function (params, callback) {
   var pkg       = grunt.file.readJSON('package.json');
 
   options.homepage = options.homepage || pkg.homepage;
-  options.robot = options.robot || true;
+  options.robot = options.robot !== false;
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
   options.relativedest = options.relativedest || false;
