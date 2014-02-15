@@ -84,6 +84,24 @@ module.exports = function(grunt) {
             dest: 'test/actual/sitemap_relative'
           }
         ]
+      },
+      sitemap_dest: {
+        options: {
+          sitemap: {
+            homepage: 'http://assemble.io',
+            exclude: ['50x', 'foo'],
+            relativedest: true,
+            dest: 'test/actual/sitemap_dest'
+          }
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'test/fixtures/pages',
+            src: ['**/*.hbs'],
+            dest: 'test/actual/sitemap_dest'
+          }
+        ]
       }
     },
 

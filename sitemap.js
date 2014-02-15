@@ -19,7 +19,6 @@ module.exports  = function (params, callback) {
   var grunt     = params.grunt;
   var pages     = assemble.options.pages;
   var options   = assemble.options.sitemap || {};
-  var dest      = path.dirname(pages[0].dest);
   var sitemap   = [];
   var robots    = [];
   var exclusion = ['404'];
@@ -29,6 +28,7 @@ module.exports  = function (params, callback) {
   options.robot = options.robot !== false;
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
+  options.dest = options.dest || path.dirname(pages[0].dest);
   options.relativedest = options.relativedest || false;
 
 
@@ -48,7 +48,7 @@ module.exports  = function (params, callback) {
 
   // Return the relative destination if the option is enabled
   var getRelativeDest = function(relativedest, file) {
-    return (relativedest ? file.dest.replace(file.filePair.orig.dest + "/", "") : file.dest );
+    return (relativedest ? file.dest.replace(options.dest + "/", "") : file.dest );
   };
 
   async.forEach(pages, function (file, next) {
@@ -90,7 +90,7 @@ module.exports  = function (params, callback) {
 
   
 
-  var sitemapDest = dest + '/sitemap.xml';
+  var sitemapDest = options.dest + '/sitemap.xml';
   write(sitemapDest, result);
 
   if (options.robot) {
@@ -100,7 +100,7 @@ module.exports  = function (params, callback) {
       robot += item + '\n';
     });
 
-    var robotpDest = dest + '/robots.txt';
+    var robotpDest = options.dest + '/robots.txt';
     write(robotpDest, robot);
   }
   
