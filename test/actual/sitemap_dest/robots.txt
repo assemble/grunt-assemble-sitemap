@@ -1,4 +1,5 @@
 User-agent: *
 
 Disallow: /404.html
-Disallow: /foo.html
+Disallow: /articles/arctic-ice-is-really-cold.html
+Disallow: /articles/index.html

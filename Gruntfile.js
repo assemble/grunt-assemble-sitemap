@@ -89,7 +89,7 @@ module.exports = function(grunt) {
         options: {
           sitemap: {
             homepage: 'http://assemble.io',
-            exclude: ['50x', 'foo'],
+            exclude: ['**/articles/**'],
             relativedest: true,
             dest: 'test/actual/sitemap_dest'
           }
