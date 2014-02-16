@@ -1,4 +1,4 @@
 User-agent: *
 
-Disallow: /test/actual/sitemap_relative/404.html
-Disallow: /test/actual/sitemap_relative/foo.html
+Disallow: /404.html
+Disallow: /foo.html
