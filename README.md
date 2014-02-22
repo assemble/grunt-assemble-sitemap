@@ -8,7 +8,6 @@
 * [Usage Examples](#usage-examples)
 * [Contributing](#contributing)
 * [Author](#author)
-* [Release History](#release-history)
 * [License](#license)
 
 
@@ -48,6 +47,12 @@ If everything was installed and configured correctly, you should be ready to go!
 
 ## Options
 See [sitemaps.org](http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for detail XML tag definitions.
+
+#### dest
+Type: `String`  
+Default: `assemble.pages`
+
+Sitemap destination. If not set, fallback to assemble destination.
 
 ### homepage
 Type: `String`  
@@ -165,23 +170,10 @@ We welcome all kinds of contributions! The most basic way to show your support i
 + [github.com/hariadi](https://github.com/hariadi)
 + [twitter.com/hariadi](http://twitter.com/hariadi)
 
-## Release History
-
- * 2013-02-05   v0.2.0   Generation of robots.txt will now respect the relativedest option.
- * 2013-02-02   v0.1.9   Fix sitemap destination
- * 2013-01-28   v0.1.8   Use external library Get pages from assemble object
- * 2013-01-03   v0.1.7   Add relativedest option
- * 2013-12-12   v0.1.6   Fix plugin name in Usage Examples Update deps
- * 2013-11-28   v0.1.4   Updates dependencies to work with Grunt 0.4.2 [object Object] Add TOC to docs
- * 2013-10-20   v0.1.3   Fix sitemap and robots.txt generated on every folder Update docs options:exclusions
- * 2013-10-18   v0.1.2   Fix homepage
- * 2013-10-17   v0.1.1   Add option to generate robots.txt Change name to assemble-contrib.sitemap Move to Assemble main repo
- * 2013-10-01   v0.1.0   First commmit. Add option to exclude
-
 ## License
 Copyright (c) 2014 Hariadi Hinta, contributors.
 Released under the  license
 
 ***
 
-_This file was generated on Thursday, February 5, 2014._
+_This file was generated on Saturday, February 22, 2014._

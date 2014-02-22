@@ -1,5 +1,11 @@
 See [sitemaps.org](http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for detail XML tag definitions.
 
+### dest
+Type: `String`  
+Default: `undefined`
+
+Sitemap destination. If not set, fallback to assemble destination.
+
 ## homepage
 Type: `String`  
 Default: `homepage` (from package.json)
