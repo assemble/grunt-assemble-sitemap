@@ -1,21 +1,21 @@
 v0.2.0:
-  date: 2013-02-05
+  date: 2014-02-05
   changes:
     - Generation of robots.txt will now respect the relativedest option.
 
 v0.1.9:
-  date: 2013-02-02
+  date: 2014-02-02
   changes:
     - Fix sitemap destination
 
 v0.1.8:
-  date: 2013-01-28
+  date: 2014-01-28
   changes:
     - Use external library
     - Get pages from assemble object
 
 v0.1.7:
-  date: 2013-01-03
+  date: 2014-01-03
   changes:
     - Add relativedest option
 
