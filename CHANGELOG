@@ -1,3 +1,13 @@
+v0.2.1:
+  date: 2014-02-21
+  changes:
+    - fix option.robot was ignored and always true  0159123
+    - feature: add option.dest and use as output path
+    - fix: option.robot was ignored and always true
+    - feature: add option to overwrite changefreq per file
+    - cosmetical changes (code formatting, naming, simplify)
+    - wip: enable globbing patterns for option.exclude
+
 v0.2.0:
   date: 2014-02-05
   changes:
@@ -49,7 +59,7 @@ v0.1.1:
     - Add option to generate robots.txt
     - Change name to assemble-contrib.sitemap
     - Move to Assemble main repo
-
+    
 v0.1.0:
   date: 2013-10-01
   changes:
