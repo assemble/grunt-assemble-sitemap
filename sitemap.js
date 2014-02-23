@@ -14,26 +14,25 @@ var _ = require('lodash');
 var path = require('path');
 
 module.exports  = function (params, callback) {
-  
+
   var assemble  = params.assemble;
   var grunt     = params.grunt;
   var pages     = assemble.options.pages;
   var options   = assemble.options.sitemap || {};
-  var dest      = path.dirname(pages[0].dest);
   var sitemap   = [];
   var robots    = [];
   var exclusion = ['404'];
   var pkg       = grunt.file.readJSON('package.json');
 
   options.homepage = options.homepage || pkg.homepage;
-  options.robot = options.robot || true;
+  options.robot = options.robot !== false;
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
-  options.relativedest = options.relativedest || false;
+  options.dest = options.dest || path.dirname(pages[0].dest);
 
 
   // Only write if it actually changed.
-  var write = function(file, content) {
+  var write = function (file, content) {
     var msg;
     var old = grunt.file.exists(file) ? grunt.file.read(file) : '';
 
@@ -47,37 +46,38 @@ module.exports  = function (params, callback) {
   };
 
   // Return the relative destination if the option is enabled
-  var getRelativeDest = function(relativedest, file) {
-    return (relativedest ? file.dest.replace(file.filePair.orig.dest + "/", "") : file.dest );
+  var getExternalFilePath = function (relativedest, file) {
+    return (relativedest ? file.dest.replace(options.dest + "/", "") : file.dest );
   };
 
   async.forEach(pages, function (file, next) {
 
-    if(!_.isUndefined(options.exclude)) {
+    if (!_.isUndefined(options.exclude)) {
       exclusion = _.union([], exclusion, options.exclude || []);
     }
 
     var url = options.homepage;
     var date = file.data.updated || file.data.date || new Date();
-    var changefreq = options.changefreq;
+    var changefreq = file.data.changefreq || options.changefreq;
     var priority = options.priority;
     var relativedest = options.relativedest;
     
-    if(exclusion.indexOf(file.basename) !== -1) {
-      robots.push('Disallow: /' + getRelativeDest(relativedest, file));
+    if (exclusion.indexOf(file.basename) !== -1 ||
+        grunt.file.isMatch({srcBase: options.dest}, exclusion, file.dest)) {
+      robots.push('Disallow: /' + getExternalFilePath(relativedest, file));
       return;
     }
 
     sitemap.push({
       url: {
-        loc: url + '/' + getRelativeDest(relativedest, file),
+        loc: url + '/' + getExternalFilePath(relativedest, file),
         lastmod: date.toISOString(),
         changefreq: changefreq,
         priority: priority
       }
     });
 
-  next();
+    next();
   }, callback());
 
   var result = xml.toXML({
@@ -88,22 +88,20 @@ module.exports  = function (params, callback) {
     _content: sitemap
   }, {header: true, indent: '  '});
 
-  
 
-  var sitemapDest = dest + '/sitemap.xml';
+
+  var sitemapDest = options.dest + '/sitemap.xml';
   write(sitemapDest, result);
 
   if (options.robot) {
     var robot = "User-agent: *\n\n";
 
-    _.forEach(robots, function(item) {
-      robot += item + '\n';
-    });
+    robot += robots.join('\n') + '\n';
 
-    var robotpDest = dest + '/robots.txt';
+    var robotpDest = options.dest + '/robots.txt';
     write(robotpDest, robot);
   }
-  
+
 };
 
 module.exports.options = {

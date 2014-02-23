@@ -1,21 +1,31 @@
+v0.2.1:
+  date: 2014-02-21
+  changes:
+    - fix option.robot was ignored and always true  0159123
+    - feature: add option.dest and use as output path
+    - fix: option.robot was ignored and always true
+    - feature: add option to overwrite changefreq per file
+    - cosmetical changes (code formatting, naming, simplify)
+    - wip: enable globbing patterns for option.exclude
+
 v0.2.0:
-  date: 2013-02-05
+  date: 2014-02-05
   changes:
     - Generation of robots.txt will now respect the relativedest option.
 
 v0.1.9:
-  date: 2013-02-02
+  date: 2014-02-02
   changes:
     - Fix sitemap destination
 
 v0.1.8:
-  date: 2013-01-28
+  date: 2014-01-28
   changes:
     - Use external library
     - Get pages from assemble object
 
 v0.1.7:
-  date: 2013-01-03
+  date: 2014-01-03
   changes:
     - Add relativedest option
 
@@ -49,7 +59,7 @@ v0.1.1:
     - Add option to generate robots.txt
     - Change name to assemble-contrib.sitemap
     - Move to Assemble main repo
-
+    
 v0.1.0:
   date: 2013-10-01
   changes:

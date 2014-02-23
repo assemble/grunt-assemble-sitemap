@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /404.html
+Disallow: /articles/arctic-ice-is-really-cold.html
+Disallow: /articles/index.html
