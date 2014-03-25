@@ -59,9 +59,9 @@ module.exports  = function (params, callback) {
     var url = options.homepage;
     var date = file.data.updated || file.data.date || new Date();
     var changefreq = file.data.changefreq || options.changefreq;
-    var priority = options.priority;
+    var priority = file.data.priority || options.priority;
     var relativedest = options.relativedest;
-    
+
     if (exclusion.indexOf(file.basename) !== -1 ||
         grunt.file.isMatch({srcBase: options.dest}, exclusion, file.dest)) {
       robots.push('Disallow: /' + getExternalFilePath(relativedest, file));
