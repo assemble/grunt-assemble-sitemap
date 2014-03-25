@@ -50,7 +50,7 @@ See [sitemaps.org](http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for 
 
 #### dest
 Type: `String`  
-Default: `assemble.pages`
+Default: `undefined`
 
 Sitemap destination. If not set, fallback to assemble destination.
 
@@ -102,6 +102,7 @@ Type: `Boolean`
 Default: `true`
 
 Generate robots.txt from `exclusions` list.
+
 
 
 ## Usage Examples
@@ -176,4 +177,4 @@ Released under the  license
 
 ***
 
-_This file was generated on Saturday, February 22, 2014._
+_This file was generated on Tuesday, March 25, 2014._
