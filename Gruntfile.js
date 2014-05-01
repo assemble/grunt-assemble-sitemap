@@ -39,9 +39,9 @@ module.exports = function(grunt) {
       sitemap: {
         files: [
           {
-            expand: true, 
-            cwd: 'test/fixtures/pages', 
-            src: ['**/*.hbs'], 
+            expand: true,
+            cwd: 'test/fixtures/pages',
+            src: ['**/*.hbs'],
             dest: 'test/actual/sitemap'
           }
         ]
@@ -58,9 +58,9 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            expand: true, 
-            cwd: 'test/fixtures/pages', 
-            src: ['**/*.hbs'], 
+            expand: true,
+            cwd: 'test/fixtures/pages',
+            src: ['**/*.hbs'],
             dest: 'test/actual/sitemap_option'
           }
         ]
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-readme');
+  grunt.loadNpmTasks('grunt-verb');
   grunt.loadNpmTasks('assemble');
 
   // By default, lint and run all tests.
