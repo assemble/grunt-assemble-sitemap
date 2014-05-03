@@ -118,5 +118,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'clean', 'assemble']);
+  grunt.registerTask('default', ['jshint', 'clean', 'assemble', 'verb']);
 };

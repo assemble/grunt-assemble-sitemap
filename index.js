@@ -1,8 +1,6 @@
-/*
- * Assemble Plugin: Sitemap
- * https://github.com/assemble/assemble-contrib-sitemap
- *
- * Sitemap generator plugin for Assemble.
+/*!
+ * sitemap middleware for assemble
+ * https://github.com/assemble/assemble-middleware-sitemap
  *
  * Copyright (c) 2014 Hariadi Hinta, contributors.
  * Licensed under the MIT license.

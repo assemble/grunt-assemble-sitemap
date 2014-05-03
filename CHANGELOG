@@ -59,7 +59,7 @@ v0.1.1:
     - Add option to generate robots.txt
     - Change name to assemble-contrib.sitemap
     - Move to Assemble main repo
-    
+
 v0.1.0:
   date: 2013-10-01
   changes:
