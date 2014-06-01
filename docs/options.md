@@ -1,6 +1,6 @@
 See [sitemaps.org](http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for detail XML tag definitions.
 
-### dest
+## dest
 Type: `String`  
 Default: `undefined`
 
@@ -36,7 +36,7 @@ The priority of this URL relative to other URLs on your site. Valid values range
 Type: `Array`  
 Default: `['404']`
 
-Page to omit from the sitemap.
+Pages to omit from the sitemap.
 
 ```js
 options: {
@@ -49,7 +49,13 @@ options: {
 }
 ```
 
-### robot
+## relativedest
+Type: `Boolean`  
+Default: `false`
+
+If set to `true`, the destination path `dest` won’t be included in the URLs in the sitemap and robots.txt.
+
+## robot
 Type: `Boolean`  
 Default: `true`
 
