@@ -48,17 +48,18 @@ module.exports  = function (params, callback) {
     return (relativedest ? file.dest.replace(options.dest + "/", "") : file.dest );
   };
 
+  var url = options.homepage;
+  var relativedest = options.relativedest;
+
   async.forEach(pages, function (file, next) {
 
     if (!_.isUndefined(options.exclude)) {
       exclusion = _.union([], exclusion, options.exclude || []);
     }
 
-    var url = options.homepage;
     var date = file.data.updated || file.data.date || new Date();
     var changefreq = file.data.changefreq || options.changefreq;
     var priority = file.data.priority || options.priority;
-    var relativedest = options.relativedest;
 
     if (exclusion.indexOf(file.basename) !== -1 ||
         grunt.file.isMatch({srcBase: options.dest}, exclusion, file.dest)) {
@@ -92,9 +93,13 @@ module.exports  = function (params, callback) {
   write(sitemapDest, result);
 
   if (options.robot) {
-    var robot = "User-agent: *\n\n";
+    var sitemapFile = {dest: url+"/"+sitemapDest};
+    var robot = "User-agent: *\n";
 
-    robot += robots.join('\n') + '\n';
+    robot += robots.join('\n') + '\n\n';
+
+    robot += "Sitemap: " + getExternalFilePath(relativedest, sitemapFile);
+    robot += "\n";
 
     var robotpDest = options.dest + '/robots.txt';
     write(robotpDest, robot);
