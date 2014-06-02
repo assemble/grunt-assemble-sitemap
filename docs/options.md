@@ -50,10 +50,10 @@ options: {
 ```
 
 ## relativedest
-Type: `Boolean`  
+Type: `String` / `Boolean`  
 Default: `false`
 
-If set to `true`, the destination path `dest` won’t be included in the URLs in the sitemap and robots.txt.
+Path to which the URLs in Sitemap and Robots should be relative to. `true` is equal to the destination path `dest` and `false` is equal to the root directory.
 
 ## robot
 Type: `Boolean`  
