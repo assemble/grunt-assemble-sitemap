@@ -45,7 +45,10 @@ module.exports  = function (params, callback) {
 
   // Return the relative destination if the option is enabled
   var getExternalFilePath = function (relativedest, file) {
-    return (relativedest ? file.dest.replace(options.dest + "/", "") : file.dest );
+    if(relativedest === true) {
+      relativedest = options.dest;
+    }
+    return (relativedest ? file.dest.replace(relativedest + "/", "") : file.dest );
   };
 
   var url = options.homepage;
