@@ -1,12 +1,35 @@
+v0.2.5:
+  date: 2014-06-01
+  changes:
+    - fix sitemap and robots not generated
+    - relativedest can be a path now
+
+v0.2.4:
+  date: 2014-06-01
+  changes:
+    - added sitemap URL to robots.txt
+    - added relativedest to options
+
+v0.2.3:
+  date: 2014-05-03
+  changes:
+    - fixes toc
+    - Change docs to use verb
+
+v0.2.2:
+  date: 2014-03-26
+  changes:
+    - Change from plugin to middleware
+
 v0.2.1:
   date: 2014-02-21
   changes:
     - fix option.robot was ignored and always true  0159123
-    - feature: add option.dest and use as output path
-    - fix: option.robot was ignored and always true
-    - feature: add option to overwrite changefreq per file
+    - (feat) add option.dest and use as output path
+    - fix option.robot was ignored and always true
+    - (feat) add option to overwrite changefreq per file
     - cosmetical changes (code formatting, naming, simplify)
-    - wip: enable globbing patterns for option.exclude
+    - (wip) enable globbing patterns for option.exclude
 
 v0.2.0:
   date: 2014-02-05
