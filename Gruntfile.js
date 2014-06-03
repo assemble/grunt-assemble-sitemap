@@ -29,12 +29,12 @@ module.exports = function(grunt) {
         eqnull: true,
         node: true
       },
-      all: ['Gruntfile.js', 'sitemap.js']
+      all: ['Gruntfile.js', 'index.js']
     },
 
     assemble: {
       options: {
-        plugins: ['./sitemap.js']
+        plugins: ['index.js']
       },
       sitemap: {
         files: [
