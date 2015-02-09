@@ -32,7 +32,7 @@ Default: `0.5`
 
 The priority of this URL relative to other URLs on your site. Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites—it only lets the search engines know which pages you deem most important for the crawlers.
 
-## exclusions
+## exclude
 Type: `Array`  
 Default: `['404']`
 
@@ -41,7 +41,7 @@ Pages to omit from the sitemap.
 ```js
 options: {
   sitemap: {
-    exclusions: ["foo", "bar"],
+    exclude: ["foo", "bar"],
   },
   files: {
     ...
@@ -59,4 +59,37 @@ Path to which the URLs in Sitemap and Robots should be relative to. `true` is eq
 Type: `Boolean`  
 Default: `true`
 
-Generate robots.txt from `exclusions` list.
+Generate robots.txt from `exclude` list.
+
+## callback
+Type: `function`
+Default: identity function
+
+Function to transform the url object before it is written as XML. The function will be passed an object with this layout, and should return the same.
+
+Example url object:
+
+```js
+{
+  loc: 'http://example.com/foo.html'
+  lastmod: '2015-02-09T05:55:21.655Z'
+  changefreq: 'hourly'
+  priority: 0.5
+}
+```
+
+Example callback:
+
+```js
+assemble: {
+  options: {
+    sitemap: {
+      callback: function(url) {
+        if (url.loc.indexOf('news') > -1)
+          url.changefreq = 'always'
+        return url;
+      }
+    }
+  }
+}
+```

@@ -27,6 +27,7 @@ module.exports  = function (params, callback) {
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
   options.dest = options.dest || path.dirname(pages[0].dest);
+  options.callback = options.callback || function (x) { return x; };
 
 
   // Only write if it actually changed.
@@ -40,7 +41,7 @@ module.exports  = function (params, callback) {
     } else {
       msg = 'Keeping '.yellow + file.cyan;
     }
-    return grunt.verbose.ok(msg);
+    return grunt.log.ok(msg);
   };
 
   // Return the relative destination if the option is enabled
@@ -71,12 +72,12 @@ module.exports  = function (params, callback) {
     }
 
     sitemap.push({
-      url: {
+      url: options.callback({
         loc: url + '/' + getExternalFilePath(relativedest, file),
         lastmod: date.toISOString(),
         changefreq: changefreq,
         priority: priority
-      }
+      })
     });
 
     next();
