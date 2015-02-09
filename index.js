@@ -41,7 +41,7 @@ module.exports  = function (params, callback) {
     } else {
       msg = 'Keeping '.yellow + file.cyan;
     }
-    return grunt.verbose.ok(msg);
+    return grunt.log.ok(msg);
   };
 
   // Return the relative destination if the option is enabled
