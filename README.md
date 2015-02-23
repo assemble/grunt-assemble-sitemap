@@ -96,6 +96,12 @@ Default: `true`
 
 Generate robots.txt from `exclusions` list.
 
+### removeindex
+Type: `Boolean`  
+Default: `false`
+
+Remove the `index.html` from the `externalFilePath`.
+
 
 ## Usage Examples
 ### Simple

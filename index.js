@@ -27,6 +27,7 @@ module.exports  = function (params, callback) {
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
   options.dest = options.dest || path.dirname(pages[0].dest);
+  options.removeindex = options.removeindex || false;
 
 
   // Only write if it actually changed.
@@ -63,16 +64,21 @@ module.exports  = function (params, callback) {
     var date = file.data.updated || file.data.date || new Date();
     var changefreq = file.data.changefreq || options.changefreq;
     var priority = file.data.priority || options.priority;
-
+    var filepath = getExternalFilePath(relativedest, file);
+    
     if (exclusion.indexOf(file.basename) !== -1 ||
         grunt.file.isMatch({srcBase: options.dest}, exclusion, file.dest)) {
       robots.push('Disallow: /' + getExternalFilePath(relativedest, file));
       return;
     }
 
+    if(options.removeindex === true) {
+      filepath = getExternalFilePath(relativedest, file).replace("index.html", "");
+    }
+
     sitemap.push({
       url: {
-        loc: url + '/' + getExternalFilePath(relativedest, file),
+        loc: url + '/' + filepath,
         lastmod: date.toISOString(),
         changefreq: changefreq,
         priority: priority
