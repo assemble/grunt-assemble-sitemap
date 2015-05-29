@@ -54,7 +54,7 @@ module.exports  = function (params, callback) {
     if (options.flattendirectoryindex === true) {
       finalFilename = file.dest.replace("index.html", "");
     }
-    return (relativedest ? file.dest.replace(relativedest + "/", "") : file.dest );
+    return (relativedest ? finalFilename.replace(relativedest + "/", "") : finalFilename );
   };
 
   var url = options.homepage;
