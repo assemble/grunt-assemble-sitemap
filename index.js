@@ -28,6 +28,7 @@ module.exports  = function (params, callback) {
   options.priority = (options.priority || 0.5).toString();
   options.dest = options.dest || path.dirname(pages[0].dest);
   options.flattendirectoryindex = options.flattendirectoryindex || false;
+  options.outputfilename = options.outputfilename || 'sitemap.xml';
 
 
   // Only write if it actually changed.
@@ -98,7 +99,7 @@ module.exports  = function (params, callback) {
 
 
 
-  var sitemapDest = options.dest + '/sitemap.xml';
+  var sitemapDest = options.dest + "/" + options.outputfilename;
   write(sitemapDest, result);
 
   if (options.robot) {

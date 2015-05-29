@@ -32,7 +32,7 @@ Default: `0.5`
 
 The priority of this URL relative to other URLs on your site. Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites—it only lets the search engines know which pages you deem most important for the crawlers.
 
-## exclusions
+## exclude
 Type: `Array`  
 Default: `['404']`
 
@@ -54,6 +54,12 @@ Type: `String` / `Boolean`
 Default: `false`
 
 Path to which the URLs in Sitemap and Robots should be relative to. `true` is equal to the destination path `dest` and `false` is equal to the root directory.
+
+## outputfilename
+Type: `String`
+Default: `sitemap.xml`
+
+If you have a master sitemap that references sub-sitemaps, use this feature. For example `static-sitemap.xml`
 
 ## robot
 Type: `Boolean`  
