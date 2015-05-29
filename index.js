@@ -27,6 +27,7 @@ module.exports  = function (params, callback) {
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
   options.dest = options.dest || path.dirname(pages[0].dest);
+  options.flattendirectoryindex = options.flattendirectoryindex || false;
 
 
   // Only write if it actually changed.
@@ -45,10 +46,15 @@ module.exports  = function (params, callback) {
 
   // Return the relative destination if the option is enabled
   var getExternalFilePath = function (relativedest, file) {
+    var finalFilename = file.dest;
+
     if(relativedest === true) {
       relativedest = options.dest;
     }
-    return (relativedest ? file.dest.replace(relativedest + "/", "") : file.dest );
+    if (options.flattendirectoryindex === true) {
+      finalFilename = file.dest.replace("index.html", "");
+    }
+    return (relativedest ? finalFilename.replace(relativedest + "/", "") : finalFilename );
   };
 
   var url = options.homepage;

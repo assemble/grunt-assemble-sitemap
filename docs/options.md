@@ -41,7 +41,7 @@ Pages to omit from the sitemap.
 ```js
 options: {
   sitemap: {
-    exclusions: ["foo", "bar"],
+    exclude: ["foo", "bar"],
   },
   files: {
     ...
@@ -60,3 +60,9 @@ Type: `Boolean`
 Default: `true`
 
 Generate robots.txt from `exclusions` list.
+
+## flattendirectoryindex
+Type: `Boolean`
+Default: `false`
+
+When generating a sitemap with directory indexes, flatten `http://www.example.com/directory/index.html` to `http://www.example.com/directory/`
