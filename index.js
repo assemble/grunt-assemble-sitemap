@@ -1,9 +1,8 @@
 /*!
- * sitemap middleware for assemble
- * https://github.com/assemble/assemble-middleware-sitemap
+ * grunt-assemble-sitemap <https://github.com/assemble/grunt-assemble-sitemap.git>
  *
- * Copyright (c) 2014 Hariadi Hinta, contributors.
- * Licensed under the MIT license.
+ * Copyright (c) 2014-2015, Hariadi Hinta.
+ * Licensed under the MIT License.
  */
 
 var xml =  require('jstoxml');
