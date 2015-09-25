@@ -3,10 +3,7 @@
   "description": "Sitemap plugin for Assemble",
   "version": "0.1.0",
   "homepage": "http://assemble.io/plugins",
-  "author": {
-    "name": "Hariadi Hinta",
-    "url": "https://github.com/hariadi"
-  },
+  "author": "Hariadi Hinta (https://github.com/hariadi)",
   "repository": {
     "type": "git",
     "url": "https://github.com/assemble/grunt-assemble-sitemap.git"
@@ -50,5 +47,21 @@
     "site",
     "sitemap",
     "static"
-  ]
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "grunt-assemble",
+        "grunt-assemble-anchors",
+        "grunt-assemble-contextual",
+        "grunt-assemble-decompress",
+        "grunt-assemble-download",
+        "grunt-assemble-lunr",
+        "grunt-assemble-permalinks",
+        "grunt-assemble-i18n",
+        "grunt-assemble-navigation",
+        "grunt-assemble-wordcount"
+      ]
+    }
+  }
 }
