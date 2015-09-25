@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://assemble.io/middleware/test/actual/sitemap/articles/arctic-ice-is-really-cold.html</loc>
+    <loc>http://assemble.io/plugins/test/actual/sitemap/articles/arctic-ice-is-really-cold.html</loc>
     <lastmod>2013-10-03T00:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://assemble.io/middleware/test/actual/sitemap/articles/index.html</loc>
+    <loc>http://assemble.io/plugins/test/actual/sitemap/articles/index.html</loc>
     <lastmod>2013-10-02T00:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://assemble.io/middleware/test/actual/sitemap/foo.html</loc>
+    <loc>http://assemble.io/plugins/test/actual/sitemap/foo.html</loc>
     <lastmod>2013-10-03T00:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://assemble.io/middleware/test/actual/sitemap/index.html</loc>
+    <loc>http://assemble.io/plugins/test/actual/sitemap/index.html</loc>
     <lastmod>2013-10-01T00:00:00.000Z</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.5</priority>

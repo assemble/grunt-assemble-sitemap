@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /test/actual/sitemap/404.html
 
-Sitemap: http://assemble.io/middleware/test/actual/sitemap/sitemap.xml
+Sitemap: http://assemble.io/plugins/test/actual/sitemap/sitemap.xml
