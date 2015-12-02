@@ -73,7 +73,7 @@ module.exports  = function (params, callback) {
     }
 
     if(options.removeindex === true) {
-      filepath = getExternalFilePath(relativedest, file).replace("index.html", "");
+      filepath = getExternalFilePath(relativedest, file).replace("index.html", "").replace("index.php", "");
     }
 
     sitemap.push({
