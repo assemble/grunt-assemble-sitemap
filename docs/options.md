@@ -32,7 +32,7 @@ Default: `0.5`
 
 The priority of this URL relative to other URLs on your site. Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites—it only lets the search engines know which pages you deem most important for the crawlers.
 
-## exclusions
+## exclude
 Type: `Array`  
 Default: `['404']`
 
@@ -41,7 +41,7 @@ Pages to omit from the sitemap.
 ```js
 options: {
   sitemap: {
-    exclusions: ["foo", "bar"],
+    exclude: ["foo", "bar"],
   },
   files: {
     ...
