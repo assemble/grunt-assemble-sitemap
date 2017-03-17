@@ -15,21 +15,8 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        boss: true,
-        eqnull: true,
-        node: true
-      },
-      all: ['Gruntfile.js', 'index.js']
+    eslint: {
+      src: ['Gruntfile.js', 'index.js']
     },
 
     assemble: {
@@ -113,9 +100,12 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('gruntify-eslint');
   grunt.loadNpmTasks('grunt-assemble');
 
+  grunt.registerTask('lint', ['eslint']);
+  grunt.registerTask('test', ['clean', 'assemble']);
+
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'clean', 'assemble']);
+  grunt.registerTask('default', ['lint', 'test']);
 };
