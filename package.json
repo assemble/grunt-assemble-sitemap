@@ -4,17 +4,22 @@
   "version": "0.2.6",
   "homepage": "http://assemble.io/plugins",
   "author": "Hariadi Hinta (https://github.com/hariadi)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/assemble/grunt-assemble-sitemap.git"
-  },
+  "contributors": [
+    "Brian Woodward <brian.woodward@gmail.com> (https://twitter.com/doowb)",
+    "Chris Smith <quartzmo@gmail.com> (www.angularjsbook.com)",
+    "Daniel Rauber (https://danielrauber.de)",
+    "Hariadi Hinta (http://www.hariadi.org)",
+    "Heinrich Goebl <hgoebl@goebl.com> (http://www.goebl.com)",
+    "Jarrod Connolly (https://github.com/jarrodconnolly)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)",
+    "Marie Hogebrandt <webmistress@melindrea.net> (http://mariehogebrandt.se)",
+    "Oleg Smetanin (https://oleg.smetan.in)"
+  ],
+  "repository": "assemble/grunt-assemble-sitemap",
   "bugs": {
     "url": "https://github.com/assemble/grunt-assemble-sitemap/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/assemble/grunt-assemble-sitemap/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
