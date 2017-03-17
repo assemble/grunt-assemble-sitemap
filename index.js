@@ -26,8 +26,8 @@ module.exports  = function (params, callback) {
   options.changefreq = options.changefreq || 'weekly';
   options.priority = (options.priority || 0.5).toString();
   options.dest = options.dest || path.dirname(pages[0].dest);
-  options.flattendirectoryindex = options.flattendirectoryindex || false;
-  options.outputfilename = options.outputfilename || 'sitemap.xml';
+  options.pretty = options.pretty || false;
+  options.basename = options.basename || 'sitemap.xml';
 
 
   // Only write if it actually changed.
@@ -51,7 +51,7 @@ module.exports  = function (params, callback) {
     if(relativedest === true) {
       relativedest = options.dest;
     }
-    if (options.flattendirectoryindex === true) {
+    if (options.pretty === true) {
       finalFilename = file.dest.replace("index.html", "");
     }
     return (relativedest ? finalFilename.replace(relativedest + "/", "") : finalFilename );
@@ -98,7 +98,7 @@ module.exports  = function (params, callback) {
 
 
 
-  var sitemapDest = options.dest + "/" + options.outputfilename;
+  var sitemapDest = options.dest + "/" + options.basename;
   write(sitemapDest, result);
 
   if (options.robot) {

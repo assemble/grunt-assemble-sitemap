@@ -55,7 +55,7 @@ Default: `false`
 
 Path to which the URLs in Sitemap and Robots should be relative to. `true` is equal to the destination path `dest` and `false` is equal to the root directory.
 
-## outputfilename
+## basename
 Type: `String`
 Default: `sitemap.xml`
 
@@ -67,8 +67,8 @@ Default: `true`
 
 Generate robots.txt from `exclusions` list.
 
-## flattendirectoryindex
+## pretty
 Type: `Boolean`
 Default: `false`
 
-When generating a sitemap with directory indexes, flatten `http://www.example.com/directory/index.html` to `http://www.example.com/directory/`
+When generating a sitemap with directory indexes, use pretty urls by removing `index` path segments from `http://www.example.com/directory/index.html` to to create `http://www.example.com/directory/`
