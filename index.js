@@ -5,21 +5,21 @@
  * Licensed under the MIT License.
  */
 
-var xml =  require('jstoxml');
+var xml = require('jstoxml');
 var async = require('async');
 var _ = require('lodash');
 var path = require('path');
 
-module.exports  = function (params, callback) {
+module.exports = function(params, callback) {
 
-  var assemble  = params.assemble;
-  var grunt     = params.grunt;
-  var pages     = assemble.options.pages;
-  var options   = assemble.options.sitemap || {};
-  var sitemap   = [];
-  var robots    = [];
+  var assemble = params.assemble;
+  var grunt = params.grunt;
+  var pages = assemble.options.pages;
+  var options = assemble.options.sitemap || {};
+  var sitemap = [];
+  var robots = [];
   var exclusion = ['404'];
-  var pkg       = grunt.file.readJSON('package.json');
+  var pkg = grunt.file.readJSON('package.json');
 
   options.homepage = options.homepage || pkg.homepage;
   options.robot = options.robot !== false;
@@ -29,9 +29,8 @@ module.exports  = function (params, callback) {
   options.pretty = options.pretty || false;
   options.basename = options.basename || 'sitemap.xml';
 
-
   // Only write if it actually changed.
-  var write = function (file, content) {
+  var write = function(file, content) {
     var msg;
     var old = grunt.file.exists(file) ? grunt.file.read(file) : '';
 
@@ -45,22 +44,22 @@ module.exports  = function (params, callback) {
   };
 
   // Return the relative destination if the option is enabled
-  var getExternalFilePath = function (relativedest, file) {
+  var getExternalFilePath = function(relativedest, file) {
     var finalFilename = file.dest;
 
-    if(relativedest === true) {
+    if (relativedest === true) {
       relativedest = options.dest;
     }
     if (options.pretty === true) {
-      finalFilename = file.dest.replace("index.html", "");
+      finalFilename = file.dest.replace('index.html', '');
     }
-    return (relativedest ? finalFilename.replace(relativedest + "/", "") : finalFilename );
+    return (relativedest ? finalFilename.replace(relativedest + '/', '') : finalFilename);
   };
 
   var url = options.homepage;
   var relativedest = options.relativedest;
 
-  async.forEach(pages, function (file, next) {
+  async.forEach(pages, function(file, next) {
 
     if (!_.isUndefined(options.exclude)) {
       exclusion = _.union([], exclusion, options.exclude || []);
@@ -86,7 +85,7 @@ module.exports  = function (params, callback) {
     });
 
     next();
-  }, callback());
+  }, callback);
 
   var result = xml.toXML({
     _name: 'urlset',
@@ -96,19 +95,17 @@ module.exports  = function (params, callback) {
     _content: sitemap
   }, {header: true, indent: '  '});
 
-
-
-  var sitemapDest = options.dest + "/" + options.basename;
+  var sitemapDest = options.dest + '/' + options.basename;
   write(sitemapDest, result);
 
   if (options.robot) {
-    var sitemapFile = {dest: url+"/"+sitemapDest};
-    var robot = "User-agent: *\n";
+    var sitemapFile = {dest: url + '/' + sitemapDest};
+    var robot = 'User-agent: *\n';
 
     robot += robots.join('\n') + '\n\n';
 
-    robot += "Sitemap: " + getExternalFilePath(relativedest, sitemapFile);
-    robot += "\n";
+    robot += 'Sitemap: ' + getExternalFilePath(relativedest, sitemapFile);
+    robot += '\n';
 
     var robotpDest = options.dest + '/robots.txt';
     write(robotpDest, robot);

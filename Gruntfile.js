@@ -94,7 +94,7 @@ module.exports = function(grunt) {
 
     // Before generating new files, remove any files from previous build.
     clean: {
-      actual: ['test/actual/**'],
+      actual: ['test/actual/**']
     }
   });
 
