@@ -31,9 +31,8 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "async": "^0.8.0",
-    "jstoxml": "^0.2.2",
-    "lodash": "^2.4.1"
+    "arr-union": "^3.1.0",
+    "jstoxml": "^0.2.2"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

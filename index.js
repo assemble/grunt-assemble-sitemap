@@ -5,15 +5,15 @@
  * Licensed under the MIT License.
  */
 
+var union = require('arr-union');
 var xml = require('jstoxml');
-var async = require('async');
-var _ = require('lodash');
 var path = require('path');
 
 module.exports = function(params, cb) {
   var assemble = params.assemble;
   var grunt = params.grunt;
   var pages = assemble.options.pages;
+  var len = pages.length;
   var options = assemble.options.sitemap || {};
   var sitemap = [];
   var robots = [];
@@ -27,6 +27,10 @@ module.exports = function(params, cb) {
   options.dest = options.dest || path.dirname(pages[0].dest);
   options.pretty = options.pretty || false;
   options.basename = options.basename || 'sitemap.xml';
+
+  if (typeof options.exclude !== 'undefined') {
+    exclusion = union([], exclusion, options.exclude || []);
+  }
 
   // Only write if it actually changed.
   var write = function(file, content) {
@@ -58,12 +62,8 @@ module.exports = function(params, cb) {
   var url = options.homepage;
   var relativedest = options.relativedest;
 
-  async.forEach(pages, function(file, next) {
-
-    if (!_.isUndefined(options.exclude)) {
-      exclusion = _.union([], exclusion, options.exclude || []);
-    }
-
+  for (var i = 0; i < len; i++) {
+    var file = pages[i];
     var date = file.data.updated || file.data.date || new Date();
     var changefreq = file.data.changefreq || options.changefreq;
     var priority = file.data.priority || options.priority;
@@ -71,7 +71,7 @@ module.exports = function(params, cb) {
     if (exclusion.indexOf(file.basename) !== -1 ||
         grunt.file.isMatch({srcBase: options.dest}, exclusion, file.dest)) {
       robots.push('Disallow: /' + getExternalFilePath(relativedest, file));
-      return next();
+      continue;
     }
 
     sitemap.push({
@@ -82,38 +82,33 @@ module.exports = function(params, cb) {
         priority: priority
       }
     });
+  }
 
-    next();
-  }, function(err) {
-    if (err) return cb(err);
+  var result = xml.toXML({
+    _name: 'urlset',
+    _attrs: {
+      xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9'
+    },
+    _content: sitemap
+  }, {header: true, indent: '  '});
 
-    var result = xml.toXML({
-      _name: 'urlset',
-      _attrs: {
-        xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9'
-      },
-      _content: sitemap
-    }, {header: true, indent: '  '});
+  var sitemapDest = options.dest + '/' + options.basename;
+  write(sitemapDest, result);
 
-    var sitemapDest = options.dest + '/' + options.basename;
-    write(sitemapDest, result);
+  if (options.robot) {
+    var sitemapFile = {dest: url + '/' + sitemapDest};
+    var robot = 'User-agent: *\n';
 
-    if (options.robot) {
-      var sitemapFile = {dest: url + '/' + sitemapDest};
-      var robot = 'User-agent: *\n';
+    robot += robots.join('\n') + '\n\n';
 
-      robot += robots.join('\n') + '\n\n';
+    robot += 'Sitemap: ' + getExternalFilePath(relativedest, sitemapFile);
+    robot += '\n';
 
-      robot += 'Sitemap: ' + getExternalFilePath(relativedest, sitemapFile);
-      robot += '\n';
+    var robotpDest = options.dest + '/robots.txt';
+    write(robotpDest, robot);
+  }
 
-      var robotpDest = options.dest + '/robots.txt';
-      write(robotpDest, robot);
-    }
-
-    cb();
-  });
-
+  cb();
 };
 
 module.exports.options = {
