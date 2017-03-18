@@ -35,11 +35,16 @@
     "jstoxml": "^0.2.2"
   },
   "devDependencies": {
+    "dateformat": "^2.0.0",
+    "fs-exists-sync": "^0.1.0",
     "grunt": "^0.4.5",
     "grunt-assemble": "~0.4.0",
     "grunt-contrib-clean": "^0.5.0",
     "gruntify-eslint": "^3.1.0",
-    "gulp-format-md": "^0.1.11"
+    "gulp-format-md": "^0.1.11",
+    "is-valid-app": "^0.2.1",
+    "js-yaml": "^3.8.2",
+    "verb-generate-readme": "^0.4.3"
   },
   "keywords": [
     "assemble",
