@@ -11,7 +11,6 @@ var _ = require('lodash');
 var path = require('path');
 
 module.exports = function(params, callback) {
-
   var assemble = params.assemble;
   var grunt = params.grunt;
   var pages = assemble.options.pages;
@@ -72,7 +71,7 @@ module.exports = function(params, callback) {
     if (exclusion.indexOf(file.basename) !== -1 ||
         grunt.file.isMatch({srcBase: options.dest}, exclusion, file.dest)) {
       robots.push('Disallow: /' + getExternalFilePath(relativedest, file));
-      return;
+      return next();
     }
 
     sitemap.push({
