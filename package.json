@@ -1,7 +1,7 @@
 {
   "name": "grunt-assemble-sitemap",
   "description": "Sitemap plugin for Assemble",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "homepage": "http://assemble.io/plugins",
   "author": "Hariadi Hinta (https://github.com/hariadi)",
   "contributors": [
