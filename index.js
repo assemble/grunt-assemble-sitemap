@@ -10,7 +10,7 @@ var async = require('async');
 var _ = require('lodash');
 var path = require('path');
 
-module.exports = function(params, callback) {
+module.exports = function(params, cb) {
   var assemble = params.assemble;
   var grunt = params.grunt;
   var pages = assemble.options.pages;
@@ -84,31 +84,35 @@ module.exports = function(params, callback) {
     });
 
     next();
-  }, callback);
+  }, function(err) {
+    if (err) return cb(err);
 
-  var result = xml.toXML({
-    _name: 'urlset',
-    _attrs: {
-      xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9'
-    },
-    _content: sitemap
-  }, {header: true, indent: '  '});
+    var result = xml.toXML({
+      _name: 'urlset',
+      _attrs: {
+        xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9'
+      },
+      _content: sitemap
+    }, {header: true, indent: '  '});
 
-  var sitemapDest = options.dest + '/' + options.basename;
-  write(sitemapDest, result);
+    var sitemapDest = options.dest + '/' + options.basename;
+    write(sitemapDest, result);
 
-  if (options.robot) {
-    var sitemapFile = {dest: url + '/' + sitemapDest};
-    var robot = 'User-agent: *\n';
+    if (options.robot) {
+      var sitemapFile = {dest: url + '/' + sitemapDest};
+      var robot = 'User-agent: *\n';
 
-    robot += robots.join('\n') + '\n\n';
+      robot += robots.join('\n') + '\n\n';
 
-    robot += 'Sitemap: ' + getExternalFilePath(relativedest, sitemapFile);
-    robot += '\n';
+      robot += 'Sitemap: ' + getExternalFilePath(relativedest, sitemapFile);
+      robot += '\n';
 
-    var robotpDest = options.dest + '/robots.txt';
-    write(robotpDest, robot);
-  }
+      var robotpDest = options.dest + '/robots.txt';
+      write(robotpDest, robot);
+    }
+
+    cb();
+  });
 
 };
 
