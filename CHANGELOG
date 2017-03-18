@@ -1,3 +1,9 @@
+v0.2.6:
+  date: 2017-03-17
+  changes:
+    - Add `option.basename` to specify the basename of the output file. Defaults to `sitemap.xml`.
+    - Add `option.pretty` to remove `index.html` from paths.
+    - Repo code clean up.
 v0.2.5:
   date: 2014-06-01
   changes:
