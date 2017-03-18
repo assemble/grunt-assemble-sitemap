@@ -3,7 +3,6 @@
 var fs = require('fs');
 var path = require('path');
 var dateformat = require('dateformat');
-var repeat = require('repeat-string');
 var yaml = require('js-yaml');
 var exists = require('fs-exists-sync');
 var isValid = require('is-valid-app');
